@@ -1,7 +1,7 @@
 package url
 
 import (
-	"iteung/controller"
+	"github.com/miqbalramadhan18/pmb/controller"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
