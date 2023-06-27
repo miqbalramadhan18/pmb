@@ -7,7 +7,7 @@ require (
 	github.com/aiteung/musik v0.0.5
 	github.com/gofiber/fiber/v2 v2.47.0
 	github.com/gofiber/websocket/v2 v2.2.1
-	github.com/miqbalramadhan18/thisbackend v0.0.9
+	github.com/miqbalramadhan18/balbackend v0.0.1
 	github.com/whatsauth/whatsauth v0.2.5
 )
 

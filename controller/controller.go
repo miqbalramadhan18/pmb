@@ -4,8 +4,8 @@ import (
 	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
+	"github.com/miqbalramadhan18/balbackend"
 	"github.com/miqbalramadhan18/pmb/config"
-	"github.com/miqbalramadhan18/thisbackend"
 	"github.com/whatsauth/whatsauth"
 )
 
@@ -13,17 +13,17 @@ var DataJalurPenerimaan = "JalurPenerimaan"
 var DataInformasi = "Informasi"
 var DataBiaya = "Biaya"
 
-type HTTPRequest struct {
-	Header string `json:"header"`
-	Body   string `json:"body"`
-}
+// type HTTPRequest struct {
+// 	Header string `json:"header"`
+// 	Body   string `json:"body"`
+// }
 
-func Sink(c *fiber.Ctx) error {
-	var req HTTPRequest
-	req.Header = string(c.Request().Header.Header())
-	req.Body = string(c.Request().Body())
-	return c.JSON(req)
-}
+// func Sink(c *fiber.Ctx) error {
+// 	var req HTTPRequest
+// 	req.Header = string(c.Request().Header.Header())
+// 	req.Body = string(c.Request().Body())
+// 	return c.JSON(req)
+// }
 
 func WsWhatsAuthQR(c *websocket.Conn) {
 	whatsauth.RunSocket(c, config.PublicKey, config.Usertables[:], config.Ulbimariaconn)
@@ -52,16 +52,16 @@ func Homepage(c *fiber.Ctx) error {
 }
 
 func GetJalurPenerimaan(c *fiber.Ctx) error {
-	getstatus := thisbackend.GetDataJalurPenerimaan("jalurtes")
+	getstatus := balbackend.GetDataJalurPenerimaan("jalurtes")
 	return c.JSON(getstatus)
 }
 
 func GetInformasi(c *fiber.Ctx) error {
-	getstatus := thisbackend.GetDataInformasi("catatan")
+	getstatus := balbackend.GetDataInformasi("catatan")
 	return c.JSON(getstatus)
 }
 
 func GetBiaya(c *fiber.Ctx) error {
-	getstatus := thisbackend.GetDataBiaya("biayasemester")
+	getstatus := balbackend.GetDataBiaya("biayasemester")
 	return c.JSON(getstatus)
 }
