@@ -1,12 +1,17 @@
 package controller
 
 import (
-	"github.com/miqbalramadhan18/pmb/config"
-
+	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
+	"github.com/miqbalramadhan18/pmb/config"
+	"github.com/miqbalramadhan18/thisbackend"
 	"github.com/whatsauth/whatsauth"
 )
+
+var DataJalurPenerimaan = "JalurPenerimaan"
+var DataInformasi = "Informasi"
+var DataBiaya = "Biaya"
 
 type HTTPRequest struct {
 	Header string `json:"header"`
@@ -39,4 +44,24 @@ func PostWhatsAuthRequest(c *fiber.Ctx) error {
 		return c.JSON(ws)
 	}
 
+}
+
+func Homepage(c *fiber.Ctx) error {
+	ipaddr := musik.GetIPaddress()
+	return c.JSON(ipaddr)
+}
+
+func GetJalurPenerimaan(c *fiber.Ctx) error {
+	getstatus := thisbackend.GetDataJalurPenerimaan("jalurtes")
+	return c.JSON(getstatus)
+}
+
+func GetInformasi(c *fiber.Ctx) error {
+	getstatus := thisbackend.GetDataInformasi("catatan")
+	return c.JSON(getstatus)
+}
+
+func GetBiaya(c *fiber.Ctx) error {
+	getstatus := thisbackend.GetDataBiaya("biayasemester")
+	return c.JSON(getstatus)
 }
