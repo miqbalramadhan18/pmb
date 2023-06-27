@@ -52,7 +52,7 @@ func Homepage(c *fiber.Ctx) error {
 }
 
 func GetJalurPenerimaan(c *fiber.Ctx) error {
-	getstatus := balbackend.GetDataJalurPenerimaan("jalurtes")
+	getstatus := balbackend.GetDataJalurPenerimaan("UTBK")
 	return c.JSON(getstatus)
 }
 
@@ -62,6 +62,6 @@ func GetInformasi(c *fiber.Ctx) error {
 }
 
 func GetBiaya(c *fiber.Ctx) error {
-	getstatus := balbackend.GetDataBiaya("biayasemester")
+	getstatus := balbackend.GetDataBiaya("7.700.000.00")
 	return c.JSON(getstatus)
 }
