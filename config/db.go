@@ -8,27 +8,19 @@ import (
 )
 
 var IteungIPAddress string = os.Getenv("ITEUNGBEV1")
-
 var MongoString string = os.Getenv("MONGOSTRING")
-
 var MariaStringAkademik string = os.Getenv("MARIASTRINGAKADEMIK")
-
 var DBUlbimariainfo = atdb.DBInfo{
 	DBString: MariaStringAkademik,
 	DBName:   "q55d8dr0eghktwnt",
 }
-
 var DBMongoinfo = atdb.DBInfo{
 	DBString: MongoString,
 	DBName:   "qobel",
 }	
-
 var MongoConn = atdb.MongoConnect(DBMongoinfo)
-
 var Ulbimariaconn = atdb.MariaConnect(DBUlbimariainfo)
-
 var Usertables = [4]whatsauth.LoginInfo{mhs, dosen, user, user1}
-
 var mhs = whatsauth.LoginInfo{
 	Userid:   "MhswID",
 	Password: "Password",

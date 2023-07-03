@@ -8,6 +8,12 @@ import (
 )
 
 var origins = []string{
+	"https://miqbalramadhan18.github.io",
+	"https://miqbalramadhan18.github.io",
+	"https://pmb.herokuapp.com/",
+	"https://gocroot.github.io/",
+	"http://127.0.0.1:5500",
+	"http://127.0.0.1:5501",
 	"https://auth.ulbi.ac.id",
 	"https://sip.ulbi.ac.id",
 	"https://euis.ulbi.ac.id",
